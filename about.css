@@ -68,3 +68,42 @@
             font-size: 24px;
             font-weight: normal;
         }
+        .footer {
+            color: #ebdbb2;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            align-items: center;
+            text-align: center;
+            font-family: 'pixelfont', Arial, sans-serif;
+            font-size: 24px;
+            font-weight: normal;
+            margin-bottom: 100px;
+        }
+        .projects-link {
+            color: #cc241d;
+            text-decoration: none;
+        }
+        .projects-link:hover {
+            color: #458588;
+            cursor: pointer;
+        }
+        .socials {
+            color: #ebdbb2;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            align-items: center;
+            text-align: center;
+            font-family: 'pixelfont', Arial, sans-serif;
+            font-size: 24px;
+            font-weight: normal;
+            margin-bottom: 100px;
+        }
+        .social-link {
+            color: #cc241d;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        .social-link:hover {
+            color: #458588;
+            cursor: pointer;
+        }
