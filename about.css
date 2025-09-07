@@ -1,0 +1,70 @@
+        @font-face {
+            font-family: 'pixelfont';
+            src: url(/fonts/Pixel\ Digivolve.otf) format('opentype'),
+                url(/fonts/Pixel\ Digivolve\ Italic.otf) format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #d79921;
+            display: grid;
+            grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+            grid-row: auto;
+            align-items: center;
+            color: #ebdbb2;
+        }
+        a {
+            text-shadow: 3px 3px 0px #000;
+        }
+        .header-title {
+            text-align: center;
+            margin: 0;
+            font-size: 48px;
+            font-family: 'pixelfont', Arial, sans-serif;
+            font-weight: bold;
+            text-decoration: none;
+            color: #ebdbb2;
+        }
+        .header-title .red {
+            color: #F50300;
+        }
+        .header-title .pink {
+            color: #FF01C4;
+        }
+        .header-title .blue {
+            color: #1400FF;
+        }
+        .header-section {
+            text-align: center;
+            margin: 0;
+            font-size: 24px;
+            font-family: 'pixelfont', Arial, sans-serif;
+            font-weight: bold;
+            text-decoration: none;
+            color: #ebdbb2;
+        }
+
+        .header-title:hover, .header-section:hover {
+            color: #458588;
+            cursor: pointer;
+        }
+        body {
+            background-color: #3c3836;
+        }
+        .content {
+            color: #ebdbb2;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            align-items: center;
+            text-align: center;
+            font-family: 'pixelfont', Arial, sans-serif;
+            font-size: 24px;
+            font-weight: normal;
+        }
