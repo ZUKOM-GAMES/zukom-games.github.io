@@ -67,3 +67,62 @@
             font-size: 24px;
             font-weight: normal;
         }
+        .contact-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh; /* centra vertical y horizontal */
+        }
+
+        .contact-form form {
+        background-color: #3c3836; /* fondo gruvbox dark */
+        padding: 20px 30px;
+        border-radius: 0px;
+        box-shadow: 3px 3px 5px #000;
+        max-width: 400px;
+        width: 100%;
+        color: #ebdbb2; /* texto blanco */
+        font-family: pixelfont, Arial, sans-serif;
+        }
+
+        .contact-form label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 14px;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+        background-color: #504945; /* gris oscuro gruvbox */
+        color: #ffffff; /* texto blanco */
+        font-family: pixelfont, Arial, sans-serif;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+        color: #ebdbb2; /* cremita */
+        }
+
+        .contact-form button {
+        background-color: #cc241d; /* azul gruvbox */
+        color: #ffffff;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+        background-color: #83a598; /* azul más claro al hover */
+        }
