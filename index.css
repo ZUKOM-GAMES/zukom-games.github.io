@@ -15,7 +15,7 @@
         .header {
             background-color: #d79921;
             display: grid;
-            grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+            grid-template-columns: 1.8fr repeat(7, 1fr);
             grid-row: auto;
             align-items: center;
             color: #ebdbb2;
@@ -24,7 +24,8 @@
             text-shadow: 3px 3px 0px #000;
         }
         .header-title {
-            text-align: center;
+            text-align: left;
+            padding-left: 20px;
             margin: 0;
             font-size: 48px;
             font-family: 'pixelfont', Arial, sans-serif;
@@ -91,4 +92,20 @@
             height: auto;
             border-radius: 8px;
             border: 2px solid #cc241d; /* borde rojo retro */
+        }
+
+        @media (max-width: 900px) {
+            .header {
+                grid-template-columns: repeat(3, 1fr);
+                row-gap: 8px;
+                padding-bottom: 8px;
+            }
+            .header-title {
+                grid-column: 1 / -1;
+                text-align: center;
+                padding-left: 0;
+            }
+            .header-section {
+                font-size: 18px;
+            }
         }

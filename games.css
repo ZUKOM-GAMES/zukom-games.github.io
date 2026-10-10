@@ -1,0 +1,149 @@
+        @font-face {
+            font-family: 'pixelfont';
+            src: url(/fonts/Pixel\ Digivolve.otf) format('opentype'),
+                url(/fonts/Pixel\ Digivolve\ Italic.otf) format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #d79921;
+            display: grid;
+            grid-template-columns: 1.8fr repeat(7, 1fr);
+            grid-row: auto;
+            align-items: center;
+            color: #ebdbb2;
+        }
+        a {
+            text-shadow: 3px 3px 0px #000;
+        }
+        .header-title {
+            text-align: left;
+            padding-left: 20px;
+            margin: 0;
+            font-size: 48px;
+            font-family: 'pixelfont', Arial, sans-serif;
+            font-weight: bold;
+            text-decoration: none;
+            color: #ebdbb2;
+        }
+        .header-title .red {
+            color: #F50300;
+        }
+        .header-title .pink {
+            color: #FF01C4;
+        }
+        .header-title .blue {
+            color: #1400FF;
+        }
+        .header-section {
+            text-align: center;
+            margin: 0;
+            font-size: 24px;
+            font-family: 'pixelfont', Arial, sans-serif;
+            font-weight: bold;
+            text-decoration: none;
+            color: #ebdbb2;
+        }
+
+        .header-title:hover, .header-section:hover {
+            color: #458588;
+            cursor: pointer;
+        }
+        body {
+            background-color: #3c3836;
+        }
+        .content {
+            color: #ebdbb2;
+            padding: 20px;
+            align-items: center;
+            text-align: center;
+            font-family: 'pixelfont', Arial, sans-serif;
+            font-size: 24px;
+            font-weight: normal;
+        }
+        .project-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+            margin: 40px auto;
+            max-width: 1000px;
+            padding: 20px;
+            background-color: #3c3836; /* fondo retro oscuro */
+            border: 2px solid #d79921; /* borde dorado gruvbox */
+            border-radius: 10px;
+            box-shadow: 4px 4px 0px #000; /* estilo retro pixelado */
+        }
+
+        .project-image {
+            width: 300px;
+            height: auto;
+            border-radius: 8px;
+            border: 2px solid #cc241d; /* borde rojo retro */
+        }
+
+        .project-item h3 {
+            margin-top: 0;
+            font-size: 28px;
+            color: #8ec07c; /* verde gruvbox */
+        }
+
+        .project-item p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 10px 0;
+            color: #ebdbb2; /* cremita */
+            text-align: left;
+        }
+
+        .project-item ul {
+            list-style-type: square;
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        .project-item li {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #ebdbb2;
+        }
+
+        .play-link {
+            display: inline-block;
+            font-size: 16px;
+            padding: 6px 14px;
+            margin: 0 0 10px;
+            background-color: #cc241d;
+            color: #ffffff;
+            text-decoration: none;
+            text-shadow: none;
+            border-radius: 5px;
+            box-shadow: 3px 3px 0px #000;
+        }
+
+        .play-link:hover {
+            background-color: #458588;
+        }
+
+        @media (max-width: 900px) {
+            .header {
+                grid-template-columns: repeat(3, 1fr);
+                row-gap: 8px;
+                padding-bottom: 8px;
+            }
+            .header-title {
+                grid-column: 1 / -1;
+                text-align: center;
+                padding-left: 0;
+            }
+            .header-section {
+                font-size: 18px;
+            }
+        }

@@ -15,7 +15,7 @@
         .header {
             background-color: #d79921;
             display: grid;
-            grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+            grid-template-columns: 1.8fr repeat(7, 1fr);
             grid-row: auto;
             align-items: center;
             color: #ebdbb2;
@@ -24,7 +24,8 @@
             text-shadow: 3px 3px 0px #000;
         }
         .header-title {
-            text-align: center;
+            text-align: left;
+            padding-left: 20px;
             margin: 0;
             font-size: 48px;
             font-family: 'pixelfont', Arial, sans-serif;
@@ -67,49 +68,150 @@
             font-size: 24px;
             font-weight: normal;
         }
-        .project-item {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 20px;
+
+
+        @media (max-width: 900px) {
+            .header {
+                grid-template-columns: repeat(3, 1fr);
+                row-gap: 8px;
+                padding-bottom: 8px;
+            }
+            .header-title {
+                grid-column: 1 / -1;
+                text-align: center;
+                padding-left: 0;
+            }
+            .header-section {
+                font-size: 18px;
+            }
+        }
+
+        .page-intro {
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 10px auto 24px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            font-size: 22px;
+            padding: 14px 30px;
+            background-color: #cc241d;
+            color: #ffffff;
+            text-decoration: none;
+            text-shadow: none;
+            border-radius: 5px;
+            box-shadow: 3px 3px 0px #000;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #458588;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
             margin: 40px auto;
-            max-width: 1000px;
-            padding: 20px;
-            background-color: #3c3836; /* fondo retro oscuro */
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            text-shadow: none;
+            color: #ebdbb2;
+            background-color: #3c3836;
             border: 2px solid #d79921; /* borde dorado gruvbox */
             border-radius: 10px;
             box-shadow: 4px 4px 0px #000; /* estilo retro pixelado */
+            overflow: hidden;
+            transition: transform 0.15s;
         }
 
-        .project-image {
-            width: 300px;
-            height: auto;
-            border-radius: 8px;
-            border: 2px solid #cc241d; /* borde rojo retro */
+        .card:hover {
+            transform: translate(-2px, -2px);
+            border-color: #458588;
         }
 
-        .project-item h3 {
-            margin-top: 0;
-            font-size: 28px;
+        .card-image {
+            aspect-ratio: 4 / 3;
+            background-color: #1d2021;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 2px solid #cc241d; /* borde rojo retro */
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-placeholder {
+            font-size: 32px;
+            color: #504945;
+        }
+
+        .card h3 {
+            margin: 16px 16px 0;
+            font-size: 20px;
             color: #8ec07c; /* verde gruvbox */
         }
 
-        .project-item p {
+        .card p {
+            margin: 10px 16px 0;
+            font-size: 14px;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        .card-button {
+            margin: auto 16px 16px;
+            padding-top: 14px;
+            font-size: 16px;
+            color: #cc241d;
+        }
+
+        .card:hover .card-button {
+            color: #458588;
+        }
+
+        .gallery-empty {
             font-size: 16px;
             line-height: 1.6;
-            margin: 10px 0;
-            color: #ebdbb2; /* cremita */
-            text-align: left;
+            color: #a89984;
+            margin: 40px auto;
+            max-width: 600px;
         }
 
-        .project-item ul {
-            list-style-type: square;
-            padding-left: 20px;
-            text-align: left;
+        .gallery.masonry {
+            display: block;
+            column-width: 320px;
+            column-gap: 24px;
         }
 
-        .project-item li {
-            margin-bottom: 8px;
-            font-size: 14px;
-            color: #ebdbb2;
+        .gallery.masonry .card {
+            break-inside: avoid;
+            margin: 0 0 24px;
+        }
+
+        .gallery.masonry .card-image {
+            aspect-ratio: auto;
+            display: block;
+        }
+
+        .gallery.masonry .card-image img {
+            height: auto;
+        }
+
+        .card-price {
+            margin: 10px 16px 0;
+            font-size: 18px;
+            color: #fabd2f;
         }

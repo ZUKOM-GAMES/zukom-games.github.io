@@ -1,0 +1,183 @@
+        @font-face {
+            font-family: 'pixelfont';
+            src: url(/fonts/Pixel\ Digivolve.otf) format('opentype'),
+                url(/fonts/Pixel\ Digivolve\ Italic.otf) format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #d79921;
+            display: grid;
+            grid-template-columns: 1.8fr repeat(7, 1fr);
+            grid-row: auto;
+            align-items: center;
+            color: #ebdbb2;
+        }
+        a {
+            text-shadow: 3px 3px 0px #000;
+        }
+        .header-title {
+            text-align: left;
+            padding-left: 20px;
+            margin: 0;
+            font-size: 48px;
+            font-family: 'pixelfont', Arial, sans-serif;
+            font-weight: bold;
+            text-decoration: none;
+            color: #ebdbb2;
+        }
+        .header-title .red {
+            color: #F50300;
+        }
+        .header-title .pink {
+            color: #FF01C4;
+        }
+        .header-title .blue {
+            color: #1400FF;
+        }
+        .header-section {
+            text-align: center;
+            margin: 0;
+            font-size: 24px;
+            font-family: 'pixelfont', Arial, sans-serif;
+            font-weight: bold;
+            text-decoration: none;
+            color: #ebdbb2;
+        }
+
+        .header-title:hover, .header-section:hover {
+            color: #458588;
+            cursor: pointer;
+        }
+        body {
+            background-color: #3c3836;
+        }
+        .content {
+            color: #ebdbb2;
+            padding: 20px;
+            align-items: center;
+            text-align: center;
+            font-family: 'pixelfont', Arial, sans-serif;
+            font-size: 24px;
+            font-weight: normal;
+        }
+
+        .play-intro {
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 10px auto 0;
+        }
+
+        .game {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #3c3836;
+            border: 2px solid #d79921; /* borde dorado gruvbox */
+            border-radius: 10px;
+            box-shadow: 4px 4px 0px #000; /* estilo retro pixelado */
+        }
+
+        .game h2 {
+            margin-top: 0;
+            font-size: 28px;
+            color: #8ec07c; /* verde gruvbox */
+        }
+
+        .game p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 10px auto 20px;
+            max-width: 700px;
+        }
+
+        .game .note {
+            font-size: 14px;
+            color: #a89984;
+        }
+
+        .game-frame {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background-color: #1d2021;
+            border: 2px solid #cc241d; /* borde rojo retro */
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .game-frame iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .game-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .play-button,
+        .fullscreen-button,
+        .itch-link {
+            font-family: 'pixelfont', Arial, sans-serif;
+            font-size: 20px;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 5px;
+            background-color: #cc241d;
+            color: #ffffff;
+            text-decoration: none;
+            text-shadow: none;
+            cursor: pointer;
+            box-shadow: 3px 3px 0px #000;
+            transition: background 0.3s;
+        }
+
+        .play-button {
+            font-size: 32px;
+            padding: 16px 40px;
+        }
+
+        .fullscreen-button,
+        .itch-link {
+            background-color: #504945;
+        }
+
+        .play-button:hover,
+        .fullscreen-button:hover,
+        .itch-link:hover {
+            background-color: #458588;
+        }
+
+        @media (max-width: 900px) {
+            .header {
+                grid-template-columns: repeat(3, 1fr);
+                row-gap: 8px;
+                padding-bottom: 8px;
+            }
+            .header-title {
+                grid-column: 1 / -1;
+                text-align: center;
+                padding-left: 0;
+            }
+            .header-section {
+                font-size: 18px;
+            }
+        }
