@@ -15,7 +15,7 @@
         .header {
             background-color: #d79921;
             display: grid;
-            grid-template-columns: 1.6fr 1fr 1fr 1fr 1.7fr 1fr;
+            grid-template-columns: 1.8fr repeat(7, 1fr);
             grid-row: auto;
             align-items: center;
             color: #ebdbb2;
@@ -164,4 +164,20 @@
         .fullscreen-button:hover,
         .itch-link:hover {
             background-color: #458588;
+        }
+
+        @media (max-width: 900px) {
+            .header {
+                grid-template-columns: repeat(3, 1fr);
+                row-gap: 8px;
+                padding-bottom: 8px;
+            }
+            .header-title {
+                grid-column: 1 / -1;
+                text-align: center;
+                padding-left: 0;
+            }
+            .header-section {
+                font-size: 18px;
+            }
         }
