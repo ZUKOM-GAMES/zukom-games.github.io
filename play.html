@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ZUKOM - PLAY</title>
+    <link rel="stylesheet" href="play.css">
+</head>
+<body>
+    <div class="header">
+        <a class="header-title" href="index.html"><span class="red">Z</span><span class="pink">U</span><span class="pink">K</span><span class="pink">O</span><span class="blue">M</span></a>
+        <a class="header-section" href="index.html">HOME</a>
+        <a class="header-section" href="about.html">ABOUT</a>
+        <a class="header-section" href="play.html">PLAY</a>
+        <a class="header-section" href="projects.html">GAMES/PROJECTS</a>
+        <a class="header-section" href="contact.html">CONTACT</a>
+    </div>
+
+    <div class="content">
+        <h1>Play in your browser!</h1>
+        <p class="play-intro">
+            These games run right here on the page, no download needed. Click PLAY and give the game a second to load.
+        </p>
+
+        <div class="game" id="epic-pixel-battle" data-itch="https://zukomteam.itch.io/epic-pixel-battle" data-embed="https://itch.io/embed-upload/17555357?color=000000">
+            <h2>EPIC PIXEL BATTLE</h2>
+            <p>A chaotic 2D pixel battle simulator. Spawn teams of pixel classes and watch them fight in Team Deathmatch or Free For All. No complicated controls, no story, just pixels trying to survive.</p>
+            <div class="game-frame" style="aspect-ratio: 980 / 640;">
+                <button class="play-button" type="button">CLICK TO PLAY</button>
+            </div>
+            <div class="game-actions">
+                <button class="fullscreen-button" type="button" hidden>FULLSCREEN</button>
+                <a class="itch-link" href="https://zukomteam.itch.io/epic-pixel-battle" target="_blank">OPEN ON ITCH.IO</a>
+            </div>
+        </div>
+
+        <div class="game" id="double-7" data-itch="https://zukomteam.itch.io/double-7" data-embed="https://itch.io/embed-upload/19561788?color=121216">
+            <h2>DOUBLE 7</h2>
+            <p>Roll. Panic. Escape. A local co-op party game for 2 to 4 players: roll doubles or a total of seven and race to escape the cup before it comes down.</p>
+            <p class="note">Click inside the game first so it captures your keyboard or gamepad. Action button: F on keyboard. Start / Enter begins the match.</p>
+            <div class="game-frame" style="aspect-ratio: 980 / 640;">
+                <button class="play-button" type="button">CLICK TO PLAY</button>
+            </div>
+            <div class="game-actions">
+                <button class="fullscreen-button" type="button" hidden>FULLSCREEN</button>
+                <a class="itch-link" href="https://zukomteam.itch.io/double-7" target="_blank">OPEN ON ITCH.IO</a>
+            </div>
+        </div>
+
+        <div class="game" id="ghost-shell" data-itch="https://zukomteam.itch.io/ghost-shell" data-embed="https://itch.io/embed-upload/16439273?color=000000">
+            <h2>GHOST_SHELL</h2>
+            <p>A terminal-based hacking game. Mine currency, hire hackers and exploit companies from the command line.</p>
+            <div class="game-frame" style="aspect-ratio: 800 / 620;">
+                <button class="play-button" type="button">CLICK TO PLAY</button>
+            </div>
+            <div class="game-actions">
+                <button class="fullscreen-button" type="button" hidden>FULLSCREEN</button>
+                <a class="itch-link" href="https://zukomteam.itch.io/ghost-shell" target="_blank">OPEN ON ITCH.IO</a>
+            </div>
+        </div>
+
+        <div class="game" id="aimcore" data-itch="https://zukomteam.itch.io/aimcore" data-embed="https://itch.io/embed-upload/17207198?color=000000">
+            <h2>AIMCORE</h2>
+            <p>A very fast and accessible aim trainer with static, tracking and switch target modes.</p>
+            <p class="note">The web version is only a test build. For the best performance, download the Windows or Linux version from itch.io.</p>
+            <div class="game-frame" style="aspect-ratio: 640 / 380;">
+                <button class="play-button" type="button">CLICK TO PLAY</button>
+            </div>
+            <div class="game-actions">
+                <button class="fullscreen-button" type="button" hidden>FULLSCREEN</button>
+                <a class="itch-link" href="https://zukomteam.itch.io/aimcore" target="_blank">OPEN ON ITCH.IO</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Each game's itch.io embed URL (https://itch.io/embed-upload/XXXXXXX) lives in its data-embed attribute.
+        // If a data-embed is ever left empty, that game's button opens it on itch.io instead.
+        document.querySelectorAll('.game').forEach(function (game) {
+            var frame = game.querySelector('.game-frame');
+            var playButton = game.querySelector('.play-button');
+            var fullscreenButton = game.querySelector('.fullscreen-button');
+            var embed = game.dataset.embed;
+
+            if (!embed) {
+                playButton.textContent = 'PLAY ON ITCH.IO';
+            }
+
+            playButton.addEventListener('click', function () {
+                if (!embed) {
+                    window.open(game.dataset.itch, '_blank');
+                    return;
+                }
+                var iframe = document.createElement('iframe');
+                iframe.src = embed;
+                iframe.setAttribute('allow', 'fullscreen; gamepad; autoplay');
+                iframe.setAttribute('allowfullscreen', '');
+                iframe.setAttribute('frameborder', '0');
+                iframe.title = game.querySelector('h2').textContent;
+                frame.replaceChildren(iframe);
+                fullscreenButton.hidden = false;
+            });
+
+            fullscreenButton.addEventListener('click', function () {
+                var iframe = frame.querySelector('iframe');
+                if (iframe && iframe.requestFullscreen) {
+                    iframe.requestFullscreen();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

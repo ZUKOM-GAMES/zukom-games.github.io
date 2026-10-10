@@ -15,7 +15,7 @@
         .header {
             background-color: #d79921;
             display: grid;
-            grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+            grid-template-columns: 1.6fr 1fr 1fr 1fr 1.7fr 1fr;
             grid-row: auto;
             align-items: center;
             color: #ebdbb2;
@@ -24,7 +24,8 @@
             text-shadow: 3px 3px 0px #000;
         }
         .header-title {
-            text-align: center;
+            text-align: left;
+            padding-left: 20px;
             margin: 0;
             font-size: 48px;
             font-family: 'pixelfont', Arial, sans-serif;
